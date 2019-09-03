@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="MsgApp">
+<head>
+  <meta charset="utf-8">
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Hello!</title>
+  <style>body {font-size: 1.3 em; }</style>
+</head>
+<body>
+  <div ng-controller="MsgController">
+    Original : {{ sayLikeMsg() }} <br>
+    Love : {{ sayLoveMsg() }} <br>
+    Truth : {{ sayLoveMsg() | truth : 'U' : 'Hsian' | uppercase }}
+    <div id="name" gree="Irene">
+      Your name:
+      <input type="text" ng-model="name"
+                         ng-keyup="displayNumeric()"
+                         ng-blur="upper()">
+    </div>
+    <div>
+      <button ng-click="sayMsg()">sayMsg</button>
+      <br><br>
+      Cost:
+      {{ cookieCost | currency : '%' : 3 }} <br>
+    </div>
+    <br><br>
+    <div>
+      <button ng-click="showWatchers()">show num of watcher</button></br>
+      <button ng-click="countOnce()">count Once</button><br>
+      <button ng-click="upCounter()">Increment Counter</button>
+    </div>
+    <br><br>
+    <div>
+      <button ng-click="upCounter2()">Increment Counter 2</button> <br>
+      <button ng-click="upCounter3()">Increment Counter 3</button> <br>
+      Regular : {{ counter }} <br>
+      1-time binding : {{ :: counter }}
+    </div>
+    <br><br>
+
+  </div>
+</body>
+</html>
